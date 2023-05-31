@@ -6,6 +6,8 @@
 
 .AUTHOR Mike Galvin Contact: mike@gal.vin / twitter.com/mikegalvin_ / discord.gg/5ZsnJ5k
 
+.Contributor Craig Hair 
+
 .COMPANYNAME Mike Galvin
 
 .COPYRIGHT (C) Mike Galvin. All rights reserved.
@@ -51,14 +53,15 @@ Param(
     | ||_|| ||       |  |   |          _____| ||   |___   |   |  |       ||   |        
     |_|   |_||______|   |___|         |_______||_______|  |___|  |_______||___|        
                                                                                        
-            Mike Galvin   https://gal.vin                  Version 22.12.02            
+            Mike Galvin   https://gal.vin                  Version 23.05.31
+            Craig Hair    https://github.com/MacsInSpace
       Donate: https://www.paypal.me/digressive            See -help for usage          
 "
 
 If ($UpdateCheck)
 {
-    $ScriptVersion = "22.12.02"
-    $RawSource = "https://raw.githubusercontent.com/Digressive/MDT-Setup/main/MDT-Setup.ps1"
+    $ScriptVersion = "23.05.31"
+    $RawSource = "https://github.com/MacsInSpace/MDT-Setup/edit/main/MDT-Setup.ps1"
     $SourceCheck = Invoke-RestMethod -uri "$RawSource"
     $VerCheck = Select-String -Pattern ".VERSION $ScriptVersion" -InputObject $SourceCheck
     If ($null -eq $VerCheck)
