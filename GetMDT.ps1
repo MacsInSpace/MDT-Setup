@@ -21,7 +21,7 @@ $pagelink = ((Invoke-WebRequest -UseBasicParsing -Uri "https://aka.ms/mdtdownloa
 Where-Object {($_.href -like "*confirmation.aspx?id=*") -and ($_.class -like "*download-button*")}).href
 
 $MDTURL = ((Invoke-WebRequest -UseBasicParsing -Uri "https://www.microsoft.com/en-us/download/$pagelink").Links | 
-Where-Object {$_.href -like "*MicrosoftDeploymentToolkit_x64.msi*"}).href | Select-Object -first 1
+Where-Object {$_.href -like "*MicrosoftDeploymentToolkit*x64.msi*"}).href | Select-Object -first 1
 
 Write-Host "MDT link is $MDTURL"
 Start-BitsTransfer -Source $MDTURL -Destination "$Location\MicrosoftDeploymentToolkit_x64.msi" -Priority high
