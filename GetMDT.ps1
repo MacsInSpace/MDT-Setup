@@ -6,7 +6,7 @@ $Location = $env:temp
 # Uninstall
 
 $SoftwareName="Windows Assessment and Deployment Kit"
-$SoftwareALTName="Windows Assessment and Deployment Kit Preinstallation Environment Add-0ns"
+$SoftwareALTName="Microsoft Deployment Toolkit"
 $MyApp = Get-ChildItem -Path HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall, HKLM:\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall  |
     Get-ItemProperty |
         Where-Object {$_.DisplayName -like "*$SoftwareName*" -or $_.DisplayName -like "*$SoftwareALTName*"} |
