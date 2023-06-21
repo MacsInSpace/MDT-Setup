@@ -26,12 +26,12 @@ Where-Object {($_.href -like "https://go.microsoft.com/fwlink/?linkid=*") -and (
 # ADK WinPE Download
 
 Write-Host "MDT ADK Win PE link is $ADKPEURL"
-Start-BitsTransfer -Source $ADKPEURL -Destination "$Location\ADKPE.msi" -Priority high
+Start-BitsTransfer -Source $ADKPEURL -Destination "$Location\ADKPE.exe" -Priority high
 
 # ADK WinPE INSTALL
 
 Write-Host "Installing ADKPE"
-Start-Process $Location\adkwinpesetup.exe -ArgumentList "/features + /q" -Wait
+Start-Process $Location\ADKPE.exe -ArgumentList "/features + /q" -Wait
 
 
 # MDT Get URL
