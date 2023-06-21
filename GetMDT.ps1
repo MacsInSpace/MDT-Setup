@@ -2,6 +2,30 @@
 
 $Location = $env:temp
 
+
+# Uninstall
+
+$SoftwareName="Windows Assessment and Deployment Kit"
+$SoftwareALTName="Windows Assessment and Deployment Kit Preinstallation Environment Add-0ns"
+$MyApp = Get-ChildItem -Path HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall, HKLM:\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall  |
+    Get-ItemProperty |
+        Where-Object {$_.DisplayName -like "*$SoftwareName*" -or $_.DisplayName -like "*$SoftwareALTName*"} |
+            Select-Object -Property DisplayName, UninstallString, DisplayVersion
+
+
+
+ForEach ($App in $MyApp) {
+
+
+    If ($App.UninstallString) {
+        Write-Host Uninstalling $SoftwareName...
+
+        $uninst = $App.UninstallString
+        & cmd /c $uninst /quiet /norestart
+    }
+
+}
+
 # ADK Get URL
 
 $ADKURL = ((Invoke-WebRequest -UseBasicParsing -Uri "https://docs.microsoft.com/en-us/windows-hardware/get-started/adk-install").Links | 
