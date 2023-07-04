@@ -18,7 +18,7 @@ if (Test-Path -Path $ISOs) {
 
 ForEach ($link in $URL) {
     if (Test-Path -Path "$ISOs\$($link[1])") { 
-        Write-Host $ISOs\$($link[1])" path exists"
+        Write-Host "$ISOs\$($link[1]) path exists"
         } else {
         mkdir "$ISOs\$($link[1])"
         Write-Host "$ISOs\$($link[1]) path now exists"
