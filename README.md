@@ -2,21 +2,11 @@
 
 User configurable MDT setup script
 
-For full change log and more information, [visit my site.](https://gal.vin/utils/mdt-setup/)
-
-MDT-Setup is available from:
+Based in work from MDT-Setup:
 
 * [GitHub](https://github.com/Digressive/MDT-Setup)
 * [The Microsoft PowerShell Gallery](https://www.powershellgallery.com/packages/MDT-Setup)
 
-Please consider supporting my work:
-
-* Sign up using [Patreon](https://www.patreon.com/mikegalvin).
-* Support with a one-time donation using [PayPal](https://www.paypal.me/digressive).
-
-Please report any problems via the ‘issues’ tab on GitHub.
-
--Mike
 
 ## Usage Information
 
